@@ -33,9 +33,9 @@ class SmallerVGGnet:
         model.add(MaxPooling2D(pool_size=(3,3)))
         model.add(Dropout(0.25))
      #   (CONV=>RELU)*2=>POOL
-        model.add(Conv2D(64,(3,3),padding='same',input_shape=(width,height,depth)))
-        model.add(Activation('relu'))
-        model.add(BatchNormalization(axis=chanDim))
+     #   model.add(Conv2D(64,(3,3),padding='same',input_shape=(width,height,depth)))
+     #   model.add(Activation('relu'))
+     #   model.add(BatchNormalization(axis=chanDim))
         model.add(Conv2D(64,(3,3),padding='same',input_shape=(width,height,depth)))
         model.add(Activation('relu'))
         model.add(BatchNormalization(axis=chanDim))
@@ -58,7 +58,7 @@ class SmallerVGGnet:
         model.add(Dropout(0.5))
         #use softmax to classify
         model.add(Dense(classes))
-        model.add(Activation('relu'))
+        model.add(Activation('softmax'))
 
         return model
 
