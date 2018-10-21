@@ -12,12 +12,16 @@
 
 ## Steps
 ### First step
-#### download the pictures from the internet(Google Database)
+#### download the pictures from the internet(Google Database,kaggle)
 #### label the pictures
-#### update:
+#### update 1:
 #### 1.download the pictures from kaggle:https://www.kaggle.com/jessicali9530/stanford-cars-dataset/kernels  the dataset Stanford Cars Dataset,but this dataset is used in mutiple classification, the csv files and pictures were divided into 196 classes, I have to modify the files and make it more fitable to our binary classification problem. 
 #### 2.I set half of all the pictures to be training picture and testing for the remaining.
 #### 3.In the original csv files, there are 196 classes, so I used google computer vision to recognize which is SUV, and then use the matlab and python(pandas and numpy) to modify the csv file, making all the pictures which is SUV to be class 1, and the other pictures are class 0. 
+
+#### update 2:
+#### processing the data:
+#### in the training dataset there are 8144 images. I set 70% of them as training set and the rest 30% to shift images which can increase the accuracy of the model. as the validation set. and using the ImageDataGenerator to shift images which can increase the accuracy of the model. 
 
 ### Second step: 2 different models
 
@@ -36,6 +40,5 @@
 ##### introduction to the model:
 ##### the layers of my model are as follows:
 ##### CONV(32,(3,3))->RELU->POOL('MAX')->DROPOUT(0.25)->CONV(64,(3,3))->RELU->POOL('MAX')->DROPOUT(0.25)->CONV(128,(3,3))->RELU->POOL('MAX')->DROPOUT(0.25)->FL(128)->DROPOUT(0.5)->SOFTMAX
-##### 
 
 
